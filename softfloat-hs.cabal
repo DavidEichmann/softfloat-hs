@@ -375,6 +375,14 @@ executable fpgen
                        directory,
                        process
 
+executable determinism
+  hs-source-dirs:      test
+  main-is:             Determinism.hs
+  ghc-options:         -threaded -Wall
+  default-language:    Haskell2010
+  build-depends:       base,
+                       softfloat-hs
+
 test-suite testfloat
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test

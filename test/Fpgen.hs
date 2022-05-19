@@ -411,36 +411,36 @@ executeOperation fp = do
             -- TODO: figure out what to do with trapped exceptions ?
           let softFloatResult =
                 f32Add (_roundingMode fp) (args !! 0) (args !! 1)
-          let fpgenResult = Result (args !! 2) (_outputExceptions fp)
+          let fpgenResult = args !! 2
           evalResults fpgenResult softFloatResult
         Subtract -> do
             -- f32Sub :: RoundingMode -> Word32 -> Word32 -> F32Result
           let softFloatResult =
                 f32Sub (_roundingMode fp) (args !! 0) (args !! 1)
-          let fpgenResult = Result (args !! 2) (_outputExceptions fp)
+          let fpgenResult = args !! 2
           evalResults fpgenResult softFloatResult
         Multiply -> do
             -- f32Mul :: RoundingMode -> Word32 -> Word32 -> F32Result
           let softFloatResult =
                 f32Mul (_roundingMode fp) (args !! 0) (args !! 1)
-          let fpgenResult = Result (args !! 2) (_outputExceptions fp)
+          let fpgenResult = args !! 2
           evalResults fpgenResult softFloatResult
         Divide -> do
             -- f32Div :: RoundingMode -> Word32 -> Word32 -> F32Result
           let softFloatResult =
                 f32Div (_roundingMode fp) (args !! 0) (args !! 1)
-          let fpgenResult = Result (args !! 2) (_outputExceptions fp)
+          let fpgenResult = args !! 2
           evalResults fpgenResult softFloatResult
         SquareRoot -> do
             -- f32Sqrt :: RoundingMode -> Word32 -> F32Result
           let softFloatResult = f32Sqrt (_roundingMode fp) (args !! 0)
-          let fpgenResult     = Result (args !! 1) (_outputExceptions fp)
+          let fpgenResult     = args !! 1
           evalResults fpgenResult softFloatResult
         MultiplyAdd -> do
             -- f32MulAdd :: RoundingMode -> Word32 -> Word32 -> Word32 -> F32Result
           let softFloatResult =
                 f32MulAdd (_roundingMode fp) (args !! 0) (args !! 1) (args !! 2)
-          let fpgenResult = Result (args !! 3) (_outputExceptions fp)
+          let fpgenResult = args !! 3
           evalResults fpgenResult softFloatResult
         IsSigned -> do
           Right "`IsSigned` Not implemented, skipping"
