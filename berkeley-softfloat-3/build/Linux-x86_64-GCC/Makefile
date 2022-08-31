@@ -44,9 +44,9 @@ SOFTFLOAT_OPTS ?= \
 DELETE = rm -f
 C_INCLUDES = -I. -I$(SOURCE_DIR)/$(SPECIALIZE_TYPE) -I$(SOURCE_DIR)/include
 COMPILE_C = \
-  gcc -c -Werror-implicit-function-declaration -DSOFTFLOAT_FAST_INT64 \
+  $(CC) -c -Werror-implicit-function-declaration -DSOFTFLOAT_FAST_INT64 \
     $(SOFTFLOAT_OPTS) $(C_INCLUDES) -O2 -o $@
-MAKELIB = ar crs $@
+MAKELIB = $(AR) crs $@
 
 OBJ = .o
 LIB = .a

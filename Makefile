@@ -51,7 +51,7 @@ install:
 softfloat:
 	cd $(SOFTFLOAT_PATH) &&	make SPECIALIZE_TYPE=$(SPECIALIZE_TYPE)
 	mkdir -p lib
-	gcc $(CFLAGS) -o lib/$(LIBNAME) $(SOFTFLOAT_PATH)/*.o
+	$(CC) $(CFLAGS) -o lib/$(LIBNAME) $(SOFTFLOAT_PATH)/*.o
 
 testfloat: softfloat
 	cd $(TESTFLOAT_PATH) &&	make all
